@@ -78,6 +78,7 @@ Requirements: Arduino IDE 2.x, the `esp32` board package 3.x, and the **ArduinoJ
 ```bash
 cd firmware
 cp secrets.example.h secrets.h      # fill in WiFi, Firebase secret, OneSignal keys
+# then set FIREBASE_URL in config.h to your Realtime Database URL
 ```
 
 Open the sketch in Arduino IDE, choose **ESP32 Dev Module**, and upload. Or from the command line:
@@ -95,7 +96,7 @@ Requirements: Flutter 3.x stable, Android Studio or Xcode.
 ```bash
 cd app
 cp .env.example .env                 # fill in Firebase values
-flutterfire configure                # regenerates lib/firebase_options.dart for YOUR project
+flutterfire configure                # generates lib/firebase_options.dart and android/app/google-services.json for YOUR project (both git-ignored)
 flutter pub get
 flutter run
 ```

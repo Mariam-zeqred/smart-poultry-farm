@@ -43,3 +43,8 @@ Thumbs.db
 # ---- Local packaging leftovers ----
 *.zip
 HW_Team_APK_*/
+
+# Firebase config (points at a live database)
+app/lib/firebase_options.dart
+app/android/app/google-services.json
+app/ios/Runner/GoogleService-Info.plist

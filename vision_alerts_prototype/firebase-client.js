@@ -11,7 +11,7 @@
  * Flutter app or this prototype, only used for one-off backend exploration.
  */
 
-const DB_URL = 'https://poultrysystem-1e315-default-rtdb.firebaseio.com';
+const DB_URL = 'https://YOUR-PROJECT-default-rtdb.firebaseio.com';
 
 async function dbGet(path) {
   const res = await fetch(`${DB_URL}/${path}.json`);

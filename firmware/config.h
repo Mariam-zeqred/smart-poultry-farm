@@ -48,7 +48,7 @@
 // writes under. The schema is flat and single-farm by design: every path
 // is farm/<something>, there is no per-device prefix (see firebase_init()
 // in firebase_client.cpp for the history behind that decision).
-#define FIREBASE_URL    "https://poultryfarm-v1-mm-default-rtdb.firebaseio.com"
+#define FIREBASE_URL    "https://YOUR-PROJECT-default-rtdb.firebaseio.com"   // your Realtime Database URL
 #define FIREBASE_PATH   "farm"      // Flat single-farm node — no device-id prefix
 #define DEVICE_ID       ""          // Unused in URL — kept for meta.deviceId field
 #define USER_ID         "default_user"
