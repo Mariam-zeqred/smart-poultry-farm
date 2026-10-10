@@ -1,0 +1,473 @@
+{
+  "@@locale": "en",
+
+  "visionTabLabel": "AI Monitor",
+  "visionScreenSubtitle": "Vision analysis & alerts",
+
+  "snapshotCardTitle": "Vision Analysis Snapshot",
+  "statBirdsTracked": "Birds tracked",
+  "statActivityLevel": "Activity level",
+  "statHealthyUnhealthy": "Healthy / Unhealthy",
+  "behaviorMixLabel": "Behavior mix (eat-drink / moving / rest)",
+  "behaviorEatDrink": "eat-drink",
+  "behaviorMoving": "moving",
+  "behaviorRest": "rest",
+
+  "hotspotInfo": "Hotspot: row {row}, col {col} (intensity {intensity})",
+  "@hotspotInfo": {
+    "placeholders": {
+      "row": {"type": "String"},
+      "col": {"type": "String"},
+      "intensity": {"type": "String"}
+    }
+  },
+  "hotspotUnknown": "Hotspot: —",
+
+  "lastUpdated": "Last updated {age}",
+  "@lastUpdated": {
+    "placeholders": {"age": {"type": "String"}}
+  },
+  "lastUpdatedStale": "Last updated {age} — stale",
+  "@lastUpdatedStale": {
+    "placeholders": {"age": {"type": "String"}}
+  },
+  "justNow": "just now",
+  "minutesAgo": "{count, plural, =1{1 min ago} other{{count} min ago}}",
+  "@minutesAgo": {
+    "placeholders": {"count": {"type": "num", "format": "compact"}}
+  },
+  "noDataYet": "No analysis received yet — waiting for the vision camera/analyzer to report in.",
+
+  "statusNormal": "NORMAL",
+  "statusWatch": "WATCH",
+  "statusAlert": "ALERT",
+  "statusStale": "STALE",
+  "statusNoData": "NO DATA",
+
+  "activityHigh": "High",
+  "activityMedium": "Medium",
+  "activityLow": "Low",
+  "activityUnknown": "—",
+
+  "trendsCardTitle": "Trends",
+  "trendsHint": "Last sessions logged locally",
+  "trendBirdCount": "Bird count",
+  "trendUnhealthyPct": "Unhealthy %",
+
+  "alertsCardTitle": "Alerts",
+  "showResolved": "Show resolved",
+  "noAlertsYet": "No alerts yet — try a Simulate scenario.",
+  "acknowledgeBtn": "Acknowledge",
+  "acknowledgedBtn": "Acknowledged",
+  "resolveBtn": "Resolve",
+  "resolvedBtn": "Resolved",
+
+  "alertTypeTemperatureHigh": "High Temperature",
+  "alertTypeTemperatureLow": "Low Temperature",
+  "alertTypeHumidityHigh": "High Humidity",
+  "alertTypeHumidityLow": "Low Humidity",
+  "alertTypeGasDetected": "Gas Detection",
+  "alertTypeGasCritical": "Critical Gas Level",
+  "alertTypeTempCriticalLow": "Critical Low Temperature",
+  "alertTypeTempCriticalHigh": "Critical High Temperature",
+  "alertTypeHumCriticalLow": "Critical Low Humidity",
+  "alertTypeHumCriticalHigh": "Critical High Humidity",
+  "alertTypeVisionStale": "AI Feed Offline",
+  "alertTypeVisionUnhealthyRate": "Unhealthy Rate",
+  "alertTypeVisionActivityLow": "Low Activity",
+  "alertTypeVisionBirdCountDrop": "Bird Count Drop",
+  "alertTypeVisionOvercrowding": "Overcrowding",
+  "alertTypeVisionFeedingStalled": "Feeding Stalled",
+  "alertTypeVisionCombinedHealthActivity": "Health + Activity Risk",
+  "alertTypeVisionCombinedMortality": "Possible Mortality Event",
+
+  "msgVisionStale": "No new AI analysis in {minutes} min — check the camera / desktop analyzer.",
+  "@msgVisionStale": {
+    "placeholders": {"minutes": {"type": "String"}}
+  },
+  "msgVisionUnhealthyRate": "Unhealthy detection rate at {pct}% ({unhealthy}/{total} birds).",
+  "@msgVisionUnhealthyRate": {
+    "placeholders": {
+      "pct": {"type": "String"},
+      "unhealthy": {"type": "String"},
+      "total": {"type": "String"}
+    }
+  },
+  "msgVisionActivityLow": "Activity level has been low for {count} consecutive sessions.",
+  "@msgVisionActivityLow": {
+    "placeholders": {"count": {"type": "String"}}
+  },
+  "msgVisionBirdCountDrop": "Tracked bird count dropped to {count}, more than {pct}% below the recent baseline (~{baseline}).",
+  "@msgVisionBirdCountDrop": {
+    "placeholders": {
+      "count": {"type": "String"},
+      "pct": {"type": "String"},
+      "baseline": {"type": "String"}
+    }
+  },
+  "msgVisionOvercrowding": "Activity-hotspot intensity per bird spiked to {ratio} (~{multiplier}x recent baseline) near row {row}, col {col} — possible crowding/huddling.",
+  "@msgVisionOvercrowding": {
+    "placeholders": {
+      "ratio": {"type": "String"},
+      "multiplier": {"type": "String"},
+      "row": {"type": "String"},
+      "col": {"type": "String"}
+    }
+  },
+  "msgVisionFeedingStalled": "Eat/drink activity has been under {pct}% for {count} consecutive sessions — check feeder/waterer.",
+  "@msgVisionFeedingStalled": {
+    "placeholders": {
+      "pct": {"type": "String"},
+      "count": {"type": "String"}
+    }
+  },
+  "msgVisionCombinedHealthActivity": "Unhealthy rate {pct}% together with sustained low activity — inactivity may indicate illness rather than rest.",
+  "@msgVisionCombinedHealthActivity": {
+    "placeholders": {"pct": {"type": "String"}}
+  },
+  "msgVisionCombinedMortality": "Bird count dropped to {count} (baseline ~{baseline}) while unhealthy rate is {pct}% — possible mortality event.",
+  "@msgVisionCombinedMortality": {
+    "placeholders": {
+      "count": {"type": "String"},
+      "baseline": {"type": "String"},
+      "pct": {"type": "String"}
+    }
+  },
+
+  "thresholdsCardTitle": "Alarm thresholds",
+  "thresholdsSaveBtn": "Save thresholds",
+  "thresholdsSaved": "Saved",
+  "thUnhealthyWarnPct": "Unhealthy % (warning)",
+  "thUnhealthyCriticalPct": "Unhealthy % (critical)",
+  "thActivityLowSustainedCount": "Low-activity sessions to alarm",
+  "thBirdCountDropPct": "Bird count drop %",
+  "thBirdCountSustainedCount": "Drop sessions to alarm",
+  "thHotspotSpikeRatio": "Overcrowding spike ratio (x baseline)",
+  "thFeedingStalledPct": "Feeding-stalled % floor",
+  "thFeedingSustainedCount": "Feeding-stalled sessions to alarm",
+  "thStaleMinutes": "Stale after (minutes)",
+
+  "settingsLanguageTitle": "Language",
+  "settingsLanguageEnglish": "English",
+  "settingsLanguageArabic": "العربية",
+
+  "closeBtn": "Close",
+  "retryBtn": "Retry",
+  "cancelBtnGeneric": "Cancel",
+
+  "navDashboard": "Dashboard",
+  "navDevices": "Devices",
+  "navSettings": "Settings",
+  "dashMyFarmTitle": "My Farm",
+
+  "noDeviceConnectedTitle": "No Device Connected",
+  "noDeviceConnectedSubtitle": "Connect your ESP32 to start",
+  "waitingForDeviceLabel": "WAITING FOR DEVICE",
+  "connectYourDeviceTitle": "Connect Your Device",
+  "connectYourDeviceBody": "Go to the Devices tab to add and configure your ESP32 controller",
+  "goToDevicesBtn": "Go to Devices",
+  "farmControlTitle": "Farm Control",
+  "disabledBadge": "DISABLED",
+  "controlsDisabledMsg": "Controls are disabled until a device connects",
+  "ventilationTitle": "Ventilation",
+  "fanControlSubtitle": "Fan Control",
+  "coolingTitle": "Cooling",
+  "coolerControlSubtitle": "Cooler Control",
+  "heaterTitle": "Heater",
+  "heatingControlSubtitle": "Heating Control",
+  "humidifierTitle": "Humidifier",
+  "humidifierControlSubtitle": "Humidifier Control",
+  "stateOn": "ON",
+  "stateOff": "OFF",
+  "realtimeMonitoringSubtitle": "Real-time Monitoring",
+  "lastUpdateLabel": "Last Update",
+  "temperatureLabel": "Temperature",
+  "humidityLabel": "Humidity",
+  "airQualityLabel": "Air Quality",
+  "overallLabel": "Overall",
+  "idealTempRange": "Ideal: {low}-{high}°C",
+  "@idealTempRange": {
+    "placeholders": {"low": {"type": "String"}, "high": {"type": "String"}}
+  },
+  "idealHumidityRange": "Ideal: {low}-{high}%",
+  "@idealHumidityRange": {
+    "placeholders": {"low": {"type": "String"}, "high": {"type": "String"}}
+  },
+  "goodGasRange": "Good: <{max} ppm",
+  "@goodGasRange": {
+    "placeholders": {"max": {"type": "String"}}
+  },
+  "farmConditionLabel": "Farm Condition",
+  "autoBadge": "AUTO",
+  "manualBadge": "MANUAL",
+  "farmControlModeLabel": "Farm Control Mode",
+  "autoControlSystemDesc": "System automatically controls farm",
+  "manualControlDesc": "Manual control of farm devices",
+  "autoControlPausedTitle": "Auto-Control Paused",
+  "manualPriorityRemainingMsg": "Manual priority: ~{seconds}s remaining",
+  "@manualPriorityRemainingMsg": {
+    "placeholders": {"seconds": {"type": "String"}}
+  },
+  "autoControlActiveTitle": "Auto-Control Active",
+  "safetyOverrideActiveTitle": "🚨 SAFETY OVERRIDE ACTIVE",
+  "safetyOverrideDefaultReason": "Critical safety limits triggered - controls locked",
+  "recentActivityTitle": "Recent Activity",
+  "temperatureReadingLabel": "Temperature Reading",
+  "fanStatusLabel": "Fan Status",
+  "coolerStatusLabel": "Cooler Status",
+  "heaterStatusLabel": "Heater Status",
+  "loadingFarmData": "Loading farm data...",
+  "healthCritical": "Critical",
+  "healthWarning": "Warning",
+  "healthExcellent": "Excellent",
+  "lockedSafetyOverrideTooltip": "Locked: Safety override active",
+  "lockedAutomaticModeTooltip": "Locked: Automatic mode enabled",
+  "lockedAppControlTooltip": "Locked: Device LCD is in control",
+  "appControlToggleLabel": "App Control",
+  "appControlEnabledDesc": "App is controlling the device",
+  "appControlDisabledDesc": "Device LCD is controlling — app is view-only",
+
+  "noDeviceConnectedBody": "Connect your farm controller to start monitoring\nand controlling your poultry environment",
+  "addNewDeviceBtn": "Add New Device",
+  "wifiSetupHint": "This will guide you through WiFi setup",
+  "whatYouCanDoTitle": "What you can do:",
+  "featureMonitoringTitle": "Real-time Monitoring",
+  "featureMonitoringDesc": "Track temperature, humidity & air quality",
+  "featureAutoControlTitle": "Automatic Control",
+  "featureAutoControlDesc": "Smart environmental adjustments",
+  "featureAlertsTitle": "Instant Alerts",
+  "featureAlertsDesc": "Get notified of any issues",
+  "connectAnotherControllerSubtitle": "Connect another farm controller",
+  "onlineBadge": "ONLINE",
+  "offlineBadge": "OFFLINE",
+  "firmwareLabel": "Firmware: {firmware}",
+  "@firmwareLabel": {
+    "placeholders": {"firmware": {"type": "String"}}
+  },
+  "viewDetailsOption": "View Details",
+  "editDeviceOption": "Edit Device",
+  "refreshDataOption": "Refresh Data",
+  "refreshingDeviceData": "Refreshing device data...",
+  "troubleshootOption": "Troubleshoot",
+  "deviceDetailsTitle": "Device Details",
+  "nameLabel": "Name",
+  "statusLabel": "Status",
+  "lastSeenLabel": "Last Seen",
+  "deviceIdLabel": "Device ID",
+  "firmwareOnlyLabel": "Firmware",
+  "currentReadingsTitle": "Current Readings:",
+  "controlSettingsColonTitle": "Control Settings:",
+  "controlModeLabel": "Control Mode",
+  "fanLabel": "Fan",
+  "coolerLabel": "Cooler",
+  "statusOnlineValue": "Online",
+  "statusOfflineValue": "Offline",
+  "justNowSentence": "Just now",
+  "shortMinutesAgo": "{count}m ago",
+  "@shortMinutesAgo": {
+    "placeholders": {"count": {"type": "String"}}
+  },
+  "shortHoursAgo": "{count}h ago",
+  "@shortHoursAgo": {
+    "placeholders": {"count": {"type": "String"}}
+  },
+  "shortDaysAgo": "{count}d ago",
+  "@shortDaysAgo": {
+    "placeholders": {"count": {"type": "String"}}
+  },
+  "unknownLabel": "Unknown",
+  "deviceOptionsDefaultTitle": "Device Options",
+  "deviceTroubleshootingTitle": "Device Troubleshooting",
+  "deviceAppearsOfflineMsg": "Device \"{name}\" appears to be offline.",
+  "@deviceAppearsOfflineMsg": {
+    "placeholders": {"name": {"type": "String"}}
+  },
+  "troubleshootingStepsTitle": "Troubleshooting steps:",
+  "stepCheckPower": "• Check device power connection",
+  "stepVerifyWifi": "• Verify WiFi connectivity",
+  "stepRestartDevice": "• Restart the device",
+  "stepCheckFirebase": "• Check Firebase connection",
+  "lastSeenColonLabel": "Last seen: {value}",
+  "@lastSeenColonLabel": {
+    "placeholders": {"value": {"type": "String"}}
+  },
+  "retryConnectionBtn": "Retry Connection",
+  "editDeviceComingSoon": "Edit device feature coming soon!",
+
+  "appSettingsTitle": "App Settings",
+  "darkModeTitle": "Dark Mode",
+  "darkThemeActiveSubtitle": "Dark theme active",
+  "lightThemeActiveSubtitle": "Light theme active",
+  "environmentalThresholdsTitle": "Environmental Thresholds",
+  "configureAutoControlTriggerSubtitle": "Configure automatic control trigger points",
+  "controlSettingsTitle": "Control Settings",
+  "configureAutoControlBehaviorSubtitle": "Configure automatic control behavior",
+  "manualPriorityTimeoutTitle": "Manual Priority Timeout",
+  "manualPriorityTimeoutSubtitle": "Duration auto-control waits after manual commands",
+  "fanCycleTitle": "Fan Cycle",
+  "fanCycleSubtitle": "Scheduled airing — cycles the fan on a timer, independent of gas/temp/humidity",
+  "fanCycleEnabledLabel": "Enable scheduled cycle",
+  "fanCycleOnDurationLabel": "ON duration",
+  "fanCycleOffDurationLabel": "OFF duration",
+  "fanCycleActiveBanner": "Fan is on a scheduled cycle — manual fan control is locked while active",
+  "saveBtn": "Save",
+  "systemSectionTitle": "System",
+  "aboutTitle": "About",
+  "aboutSubtitle": "App version and information",
+  "connectedDeviceTitle": "Connected Device",
+  "lotusFarmDefaultName": "Lotus Farm",
+  "deviceDisconnectedTitle": "Device Disconnected",
+  "unableToConnectDeviceMsg": "Unable to connect to device",
+  "aboutDialogTitle": "About Lotus Power",
+  "versionLabel": "Version: {version}",
+  "@versionLabel": {
+    "placeholders": {"version": {"type": "String"}}
+  },
+  "builtWithFlutterFirebase": "Built with Flutter & Firebase",
+  "esp32IntegrationDesc": "ESP32 Integration for IoT monitoring",
+  "copyrightLine": "© {year} Lotus Power",
+  "@copyrightLine": {
+    "placeholders": {"year": {"type": "String"}}
+  },
+  "manualSetupTitle": "Manual Setup",
+  "hysteresisLabel": "Hysteresis: {value}°",
+  "@hysteresisLabel": {
+    "placeholders": {"value": {"type": "String"}}
+  },
+  "hysteresisDesc": "Prevents rapid on/off cycling",
+  "resetToDefaultsDialogTitle": "Reset to Recommended Defaults?",
+  "resetToDefaultsDialogBody": "This will reset all thresholds to scientifically-backed values optimized for adult broilers (5+ weeks):\n\n• Temperature: 18-24°C\n• Humidity: 50-70%\n• Gas Alert: 400 ppm\n• Hysteresis: 1.5\n\nThese values are based on Aviagen, USDA, and FAO poultry farming standards.",
+  "resetBtn": "Reset",
+  "thresholdsResetSuccessMsg": "✅ Thresholds reset to recommended defaults",
+  "errorResettingThresholds": "Error resetting thresholds: {error}",
+  "@errorResettingThresholds": {
+    "placeholders": {"error": {"type": "String"}}
+  },
+  "resetToDefaultsBtnLong": "Reset to Recommended Defaults (Adult Birds)",
+  "temperatureRangeLabel": "Temperature Range",
+  "humidityRangeLabel": "Humidity Range",
+  "gasLevelAlertLabel": "Gas Level Alert",
+  "genericErrorMsg": "Error: {error}",
+  "@genericErrorMsg": {
+    "placeholders": {"error": {"type": "String"}}
+  },
+  "quickPresetsTitle": "Quick Presets",
+  "presetSelectHint": "Select a preset based on your poultry farming stage for optimal conditions",
+  "temperaturePresetAppliedMsg": "Temperature preset applied successfully!",
+  "humidityPresetAppliedMsg": "Humidity preset applied successfully!",
+  "resetToDefaultsBtnShort": "Reset to Defaults",
+  "thresholdsResetToDefaultsMsg": "Thresholds reset to defaults",
+  "chooseTimeoutDurationMsg": "Choose how long auto-control should wait after you manually adjust devices:",
+  "seconds15": "15 seconds",
+  "seconds30": "30 seconds",
+  "minute1": "1 minute",
+  "minutes2": "2 minutes",
+  "minutes5": "5 minutes",
+  "manualPriorityTimeoutSetMsg": "Manual priority timeout set to {label}",
+  "@manualPriorityTimeoutSetMsg": {
+    "placeholders": {"label": {"type": "String"}}
+  },
+
+  "minimumLabel": "Minimum",
+  "maximumLabel": "Maximum",
+  "validRangeLabel": "Valid range: {min}-{max} {unit}",
+  "@validRangeLabel": {
+    "placeholders": {
+      "min": {"type": "String"},
+      "max": {"type": "String"},
+      "unit": {"type": "String"}
+    }
+  },
+  "customLabel": "Custom",
+  "plainRangeLabel": "{min} - {max} {unit}",
+  "@plainRangeLabel": {
+    "placeholders": {
+      "min": {"type": "String"},
+      "max": {"type": "String"},
+      "unit": {"type": "String"}
+    }
+  },
+  "customRangeDialogTitle": "Custom {label} Range",
+  "@customRangeDialogTitle": {
+    "placeholders": {"label": {"type": "String"}}
+  },
+  "minimumUnitLabel": "Minimum {unit}",
+  "@minimumUnitLabel": {
+    "placeholders": {"unit": {"type": "String"}}
+  },
+  "maximumUnitLabel": "Maximum {unit}",
+  "@maximumUnitLabel": {
+    "placeholders": {"unit": {"type": "String"}}
+  },
+  "applyBtn": "Apply",
+
+  "presetChicks": "Chicks (0-1 week)",
+  "presetYoung": "Young (1-2 weeks)",
+  "presetGrowing": "Growing (3-4 weeks)",
+  "presetAdults": "Adults (5+ weeks)",
+  "presetLayers": "Layers (optimal)",
+  "presetDryClimate": "Dry Climate",
+  "presetStandard": "Standard",
+  "presetHumidClimate": "Humid Climate",
+  "presetHatching": "Hatching",
+
+  "pleaseEnterWifiCreds": "Please enter your WiFi network name and password",
+  "deviceSetupTitle": "Device Setup",
+  "deviceWifiSetupTitle": "Device WiFi Setup",
+  "configureDeviceWifiSubtitle": "Configure your device to connect to WiFi",
+  "beforeYouStartTitle": "Before You Start",
+  "stepConnectDeviceWifiTitle": "Connect to device WiFi",
+  "stepConnectDeviceWifiDesc": "Go to WiFi settings → Connect to \"PoultryFarm_Setup\"",
+  "stepEnterCredsTitle": "Enter credentials below",
+  "stepEnterCredsDesc": "Fill in your home WiFi details",
+  "stepSendConfigTitle": "Send configuration",
+  "stepSendConfigDesc": "Device will connect to your network",
+  "wifiCredentialsTitle": "WiFi Credentials",
+  "networkNameLabel": "Network Name (SSID)",
+  "networkNameHint": "Enter your WiFi name",
+  "passwordLabel": "Password",
+  "passwordHint": "Enter your WiFi password",
+  "sendCredentialsBtn": "Send Credentials to Device",
+  "tryAgainBtn": "Try Again",
+
+  "provisionCheckingPermissions": "Checking permissions...",
+  "provisionSendingCredentials": "Sending credentials to device...",
+  "provisionSuccessMsg": "Provisioning successful! Device will restart and connect to your WiFi.",
+  "provisionAuthRequired": "Authentication required. Please log in and try again.",
+  "provisionDeviceRestartedLikelySuccess": "Device restarted after receiving credentials. Provisioning likely successful - please check if your device appears online in the app.",
+  "provisionTimedOutLikelySuccess": "Request timed out. The device may have restarted successfully - please wait a moment and check if it appears in your device list.",
+  "provisionCannotConnect": "Cannot communicate with device. Please ensure:\n• You are connected to \"PoultryFarm_Setup\" WiFi\n• Device is powered on\n• Try moving closer to the device",
+  "provisionAuthFailedReLogin": "Authentication failed. Please log out and log back in, then try again.",
+  "provisionDeviceRejectedData": "Device rejected the data. Please ensure you are connected to the device WiFi and try again.",
+  "provisionDeviceInternalError": "Device internal error. Please restart the device and try again.",
+  "provisionDeviceRejectedCredentials": "Device could not process the credentials. Please check your WiFi password and try again.",
+  "provisionLocationPermissionRequired": "Location permission required. Please enable location services in app settings to configure WiFi.",
+  "provisionPermissionsRequired": "App permissions required. Please grant all requested permissions in settings.",
+  "provisionGenericSetupError": "Setup error: {error}",
+  "@provisionGenericSetupError": {
+    "placeholders": {"error": {"type": "String"}}
+  },
+
+  "offlineTitle": "You appear to be offline",
+  "couldNotConnectTitle": "Could not connect to server",
+  "offlineBody": "Check your network connection and tap Retry.",
+  "genericStartupErrorBody": "An error occurred during startup. Tap Retry to try again.",
+
+  "tempLowGteHighError": "Temperature low must be less than temperature high",
+  "tempRangeTooNarrowError": "Temperature range too narrow (minimum 2°C difference)",
+  "tempOutOfRangeError": "Temperature must be between {min}°C and {max}°C",
+  "@tempOutOfRangeError": {
+    "placeholders": {"min": {"type": "String"}, "max": {"type": "String"}}
+  },
+  "humidityLowGteHighError": "Humidity low must be less than humidity high",
+  "humidityRangeTooNarrowError": "Humidity range too narrow (minimum 5% difference)",
+  "humidityOutOfRangeError": "Humidity must be between {min}% and {max}%",
+  "@humidityOutOfRangeError": {
+    "placeholders": {"min": {"type": "String"}, "max": {"type": "String"}}
+  },
+  "gasOutOfRangeError": "Gas threshold must be between 1 and {max} ppm",
+  "@gasOutOfRangeError": {
+    "placeholders": {"max": {"type": "String"}}
+  },
+  "hysteresisOutOfRangeError": "Hysteresis must be between 0.5 and 10.0"
+}

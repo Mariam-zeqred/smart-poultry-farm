@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"poultryfarm-v1-mm","appId":"1:6200268371:android:1dce8541d6519b974758a6","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"poultryfarm-v1-mm","configurations":{"android":"1:6200268371:android:1dce8541d6519b974758a6","ios":"1:6200268371:ios:077d3c48227069504758a6"}}}}}}

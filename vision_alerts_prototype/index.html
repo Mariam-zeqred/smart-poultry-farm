@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GallineX — Vision Alerts Prototype</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div>
+    <h1>🐔 GallineX <span style="font-weight:400;color:var(--text-muted)">— Vision Alerts Prototype</span></h1>
+    <div class="subtitle">Live from <code>poultrysystem-1e315-default-rtdb</code> · Stage 3 UI test bed</div>
+  </div>
+  <div class="topbar-actions">
+    <span id="pollStatus" class="subtitle" style="font-size:11px;"></span>
+    <button class="icon-btn" id="notifPermBtn" title="Enable desktop notifications">🔔</button>
+    <button class="icon-btn" id="bellBtn" title="Alerts">
+      🛎️<span class="badge" id="alertBadge" style="display:none;"></span>
+    </button>
+    <button class="icon-btn" id="themeToggle" title="Toggle theme">🌓</button>
+  </div>
+</div>
+
+<main>
+  <div style="display:flex;flex-direction:column;gap:20px;">
+
+    <div class="card" id="snapshotCard">
+      <h2>Vision Analysis Snapshot
+        <span class="chip normal" id="statusChip">—</span>
+      </h2>
+
+      <div class="stat-grid">
+        <div class="stat"><div class="value" id="statBirds">—</div><div class="label">Birds tracked</div></div>
+        <div class="stat"><div class="value" id="statActivity">—</div><div class="label">Activity level</div></div>
+        <div class="stat"><div class="value" id="statHealth">—</div><div class="label">Healthy / Unhealthy</div></div>
+      </div>
+
+      <div class="label" style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">Behavior mix (eat-drink / moving / rest)</div>
+      <div class="behavior-bar">
+        <span class="eat-drink" id="barEatDrink" style="width:0%"></span>
+        <span class="moving" id="barMoving" style="width:0%"></span>
+        <span class="rest" id="barRest" style="width:0%"></span>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:var(--secondary)"></span>eat-drink <span id="lblEatDrink">0%</span></span>
+        <span><span class="dot" style="background:#E5A93B"></span>moving <span id="lblMoving">0%</span></span>
+        <span><span class="dot" style="background:#1F5138"></span>rest <span id="lblRest">0%</span></span>
+      </div>
+
+      <div class="meta-row">
+        <span id="hotspotInfo">Hotspot: —</span>
+        <span id="lastUpdated">Last updated: —</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Trends <span class="hint">last sessions logged to farm/vision/history</span></h2>
+      <div class="sparkline-row">
+        <div class="sparkline-block">
+          <div class="sp-label">Bird count</div>
+          <div id="sparkBirds"></div>
+        </div>
+        <div class="sparkline-block">
+          <div class="sp-label">Unhealthy %</div>
+          <div id="sparkUnhealthy"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Simulate a scenario
+        <button class="btn" id="resetTestData" title="Clear synthetic test history and vision alerts">↺ Reset test data</button>
+      </h2>
+      <div class="hint" style="margin-bottom:10px;">no camera yet — inject test snapshots</div>
+      <div class="sim-grid" id="simGrid"></div>
+      <div class="footnote">
+        Each click writes a short priming sequence to <code>PoultrySystem/vision/analysis</code> (what the real
+        desktop analyzer writes) so sustained/baseline rules have history to compare against, then runs the same
+        evaluator the live poller uses. This is exactly what real camera sessions will feed in production. Use
+        Reset after a long testing session to clear synthetic timestamps back to a blank slate.
+      </div>
+    </div>
+
+    <div class="card">
+      <details class="thresholds">
+        <summary>Alarm thresholds (farm/config/visionThresholds)</summary>
+        <div id="thresholdsForm"></div>
+        <button class="btn primary" id="saveThresholds" style="margin-top:8px;">Save thresholds</button>
+        <span id="thresholdsSaved" class="footnote"></span>
+      </details>
+    </div>
+
+  </div>
+
+  <div class="card" style="align-self:start;">
+    <h2>Alerts
+      <label style="font-size:11px;font-weight:400;color:var(--text-muted);display:flex;align-items:center;gap:4px;">
+        <input type="checkbox" id="showResolved" /> show resolved
+      </label>
+    </h2>
+    <div class="alert-list" id="alertList">
+      <div class="empty-state">No alerts yet.</div>
+    </div>
+  </div>
+</main>
+
+<div class="toast-stack" id="toastStack"></div>
+
+<script src="firebase-client.js"></script>
+<script src="vision-alert-engine.js"></script>
+<script src="alerts-store.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

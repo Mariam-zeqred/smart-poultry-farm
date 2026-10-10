@@ -1,0 +1,45 @@
+# ---- Secrets (never commit) ----
+firmware/secrets.h
+app/.env
+app/**/.env
+*.pem
+*.jks
+*.keystore
+
+# ---- Firmware build output ----
+firmware/build/
+*.bin
+*.elf
+*.map
+!releases/*.apk
+
+# ---- Flutter / Dart ----
+app/.dart_tool/
+app/build/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.pub-cache/
+app/.pub/
+app/android/.gradle/
+app/android/build/
+app/android/app/debug
+app/android/app/profile
+app/android/app/release
+app/ios/Pods/
+app/ios/.symlinks/
+app/ios/Flutter/.last_build_id
+app/**/*.iml
+app/.idea/
+app/**/doc/api/
+
+# ---- Editors / OS ----
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+*.stackdump
+
+# ---- Local packaging leftovers ----
+*.zip
+HW_Team_APK_*/
